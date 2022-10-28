@@ -4,8 +4,9 @@ const image_gameover = document.querySelector('.container-gameover');
 
 const jump = () => {
 
-    new Audio('./sounds/maro-jump.mp3').play();
     mario.classList.add('jump');
+
+    new Audio('./sounds/maro-jump.mp3').play();
 
     setTimeout(() => {
 
@@ -17,9 +18,6 @@ const jump = () => {
 const loop = setInterval(() => {
     const pipePosition = pipe.offsetLeft;
     const marioPosition = +window.getComputedStyle(mario).bottom.replace('px', '');
-
-    
-    console.log(marioPosition)
 
     if (pipePosition <= 120 && pipePosition > 0 && marioPosition < 80) {
 
